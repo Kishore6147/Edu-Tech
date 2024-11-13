@@ -1,0 +1,243 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navigation Styles */
+header {
+    background-color: #333;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #1E90FF;
+}
+
+/* Courses Section Header Adjustment */
+.courses h2 {
+    margin-left: 35px; /* Move header 20px to the right */
+    font-size: 2rem; /* Adjust font size as needed */
+    color: #333; /* Ensure the color matches your design */
+}
+
+
+/* Hero Section */
+.hero {
+    height: 40vh; /* Reduced height */
+    background-image: url('education-bg.jpg'); /* Add your education-related image here */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+    z-index: 1;
+    color: white;
+}
+
+/* Hero Text Animation */
+.animated-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.animated-subtitle {
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Courses Section */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for courses */
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.course-item {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.course-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.course-item h3 {
+    margin: 1rem 0;
+}
+
+.course-item .course-link {
+    display: inline-block;
+    margin: 1.5rem 0;
+    padding: 0.5rem 1rem;
+    background-color: #1E90FF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.course-item:hover {
+    transform: translateY(-5px);
+}
+
+.course-item .course-link:hover {
+    background-color: #4682B4;
+    transform: scale(1.05);
+}
+
+/* Referral Links Section */
+.referral-links {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.referral-links h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.box {
+    display: grid; /* Changed to grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Two columns for referral links */
+    gap: 2rem; /* Space between boxes */
+    justify-items: center; /* Center items in grid */
+}
+
+.box1 {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+    width: 90%; /* Make it responsive */
+    max-width: 300px; /* Max width for uniformity */
+}
+
+.logo1 {
+    margin-right: 1rem;
+}
+
+.box-text a {
+    color: #1E90FF; /* Link color */
+    text-decoration: none;
+    font-size: 1.2rem; /* Increased font size */
+    font-weight: bold; /* Bolder text */
+}
+
+.box1:hover {
+    transform: translateY(-5px); /* Raise effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.box-text a:hover {
+    text-decoration: underline; /* Underline effect on hover */
+    color: #4682B4; /* Darker blue on hover */
+}
+
+/* Button Styling */
+.cta-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #4682B4;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
